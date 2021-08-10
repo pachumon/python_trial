@@ -1,6 +1,7 @@
-from airtravel import (Flight, Aircraft)
+from airtravel import (make_flight)
+from pprint import pprint as pp
+
+f=make_flight()
+pp(f._seating)
 
 
-f = Flight("SN060", Aircraft("G-EUPT", "Airbus A319",
-           num_rows=22, num_seats_per_row=2))
-print(f.aircraft_model())
