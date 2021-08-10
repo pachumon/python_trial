@@ -5,7 +5,7 @@ Model foraircraft flights
 
 class Flight:
 
-    def __init__(self, number):
+    def __init__(self, number, aircraft):
         if not number[:2].isalpha():
             raise ValueError(f"no airline code in :{number}")
         if not number[:2].isupper():
@@ -14,6 +14,10 @@ class Flight:
             raise ValueError(f"invalid route number:{number}")
 
         self._number = number
+        self._aircraft = aircraft
+
+    def aircraft_model(self):
+        return self._aircraft.model()
 
     def number(self):
         return self._number
